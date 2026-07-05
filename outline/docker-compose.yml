@@ -23,7 +23,7 @@ services:
       retries: 3
 
   postgres:
-    image: postgres
+    image: postgres:17
     env_file: .env
     volumes:
       - ./data/db:/var/lib/postgresql/data
