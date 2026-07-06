@@ -10,3 +10,13 @@ services:
     network_mode: host
     environment:
       TZ: Europe/Berlin
+
+  matterjs-server:
+    image: ghcr.io/matter-js/matterjs-server:latest
+    read_only: true
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - "./matter-data:/data"
+    environment:
+      TZ: Europe/Berlin
