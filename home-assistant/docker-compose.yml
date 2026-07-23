@@ -22,3 +22,21 @@ services:
       - "./matter-data:/data"
     environment:
       TZ: Europe/Berlin
+
+  otbr:
+    image: openthread/border-router
+    network_mode: host
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - /var/lib/otbr:/data
+    environment:
+      TZ: Europe/Berlin
+      OT_RCP_DEVICE: spinel+hdlc+uart:///dev/ttyACM0?uart-baudrate=115200
+      OT_INFRA_IF: ens18
+      OT_THREAD_IF: wpan0
+      OT_LOG_LEVEL: 6
