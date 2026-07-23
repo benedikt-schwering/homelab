@@ -36,7 +36,7 @@ services:
       - /var/lib/otbr:/data
     environment:
       TZ: Europe/Berlin
-      OT_RCP_DEVICE: spinel+hdlc+uart:///dev/ttyACM0?uart-baudrate=115200
+      OT_RCP_DEVICE: "spinel+hdlc+uart:///dev/ttyACM0?uart-baudrate=460800"
       OT_INFRA_IF: ens18
       OT_THREAD_IF: wpan0
       OT_LOG_LEVEL: 6
