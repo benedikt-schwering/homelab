@@ -48,8 +48,8 @@ services:
       POSTGRES_PASSWORD: paperless
 
   webserver:
-    image: ghcr.io/benedikt-schwering/paperless-ngx/schwering-dms:latest
-    # image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    # image: ghcr.io/benedikt-schwering/paperless-ngx/schwering-dms:latest
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
     restart: unless-stopped
     depends_on:
       - db
